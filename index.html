@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni Matrix Sync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="logo.png" rel="icon">
+</head>
+<body class="p-5 md:p-10">
+    <div class="container mx-auto max-w-4xl bg-[var(--secondary-bg)] p-6 md:p-8 rounded-lg shadow-xl border border-[var(--border-color)]">
+        <button id="adminModeToggle" class="admin-icon-button" title="Mode Admin">
+            <img id="adminIcon" src="admin.png" alt="Admin Mode Icon">
+        </button>
+
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-[var(--text-color)]">Berikan Testimoni Anda untuk Matrix Sync</h1>
+        <img src="banner1.png" alt="Matrix Sync Banner" class="banner-image">
+
+        <div class="testimony-form-section bg-[var(--primary-bg)] p-6 rounded-md border border-[var(--border-color)] mb-8">
+            <form id="testimonyForm" class="space-y-5">
+                <div class="form-group">
+                    <label for="clientName" class="block text-lg font-semibold mb-2 text-[var(--text-color)]">Nama Anda:</label>
+                    <input type="text" id="clientName" required class="w-full p-3 border border-[var(--border-color)] rounded-md bg-[var(--secondary-bg)] text-[var(--text-color)] focus:border-[var(--accent-color)] focus:ring-2 focus:ring-[var(--accent-color)] outline-none">
+                </div>
+                <div class="form-group">
+                    <label for="testimonyText" class="block text-lg font-semibold mb-2 text-[var(--text-color)]">Testimoni Anda:</label>
+                    <textarea id="testimonyText" rows="5" required class="w-full p-3 border border-[var(--border-color)] rounded-md bg-[var(--secondary-bg)] text-[var(--text-color)] focus:border-[var(--accent-color)] focus:ring-2 focus:ring-[var(--accent-color)] outline-none"></textarea>
+                </div>
+                <div class="form-group flex flex-col md:flex-row items-start md:items-center">
+                    <label class="text-lg font-semibold mr-4 mb-2 md:mb-0 text-[var(--text-color)]">Beri Bintang:</label>
+                    <div class="stars flex" id="starRating">
+                        <span data-value="1">&#9733;</span>
+                        <span data-value="2">&#9733;</span>
+                        <span data-value="3">&#9733;</span>
+                        <span data-value="4">&#9733;</span>
+                        <span data-value="5">&#9733;</span>
+                    </div>
+                    <input type="hidden" id="ratingValue" value="0">
+                </div>
+                <button type="submit" class="submit-button w-full p-4 bg-[var(--accent-color)] text-white font-bold rounded-md hover:bg-[#0056b3] transition-colors duration-300 shadow-md">Kirim Testimoni</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-[var(--text-color)]">Testimoni Pelanggan Matrix Sync</h2>
+
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <p class="no-testimony-message">Belum ada testimoni. Jadilah yang pertama!</p>
+            </div>
+            <button class="slider-nav-button left" id="prevSlide">&#10094;</button>
+            <button class="slider-nav-button right" id="nextSlide">&#10095;</button>
+        </div>
+        <div class="slider-dots" id="sliderDots"></div>
+    </div>
+
+    <div id="adminPasswordModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3 class="text-xl font-bold mb-4 text-[var(--text-color)]">Masukkan Password Admin</h3>
+            <input type="password" id="adminPasswordInput" placeholder="Password">
+            <div class="modal-buttons">
+                <button id="confirmAdminPassword" class="confirm-button">Masuk</button>
+                <button id="cancelAdminPassword" class="cancel-button">Batal</button>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
