@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# API routing
+RewriteRule ^api/testimonies$ api.php [L,QSA]
+
+# Default index file
+DirectoryIndex index.html
